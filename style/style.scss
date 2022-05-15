@@ -7,11 +7,16 @@ $colorTextBlack: rgba(45, 48, 51, 1);
 $colorTextDark: rgba(0, 0, 0, 1);
 $colorTextRed: rgba(255, 67, 67, 1);
 $colorButton: rgba(255, 67, 67, 1);
+$colorButtonHover: rgba(231, 20, 20, 1);
+$colorButtonActive: rgba(255, 67, 67, 1);
+$colorButtonShadow: rgb(255, 67, 67);
 $colorButtonText: rgba(255, 255, 255, 1);
 $colorBorderIcon: rgba(198, 203, 205, 1);
 $colorLine: rgba(186, 187, 197, 1);
+$colorLineActive: rgba(231, 20, 20, 1);
 $colorBanner: rgba(37, 43, 73, 1);
 $colorLinkHeader: rgba(255, 255, 255, 1);
+$colorLinkActive: rgba(231, 20, 20, 1);
 $colorFooter: rgba(53, 60, 101, 1);
 $colorFooterDark: rgba(44, 49, 84, 1);
 $colorFooterText: rgba(255, 255, 255, 1);
@@ -32,11 +37,14 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
 }
 
 .header {
-    margin-bottom: 130px;
     position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 2;
 
     &__container {
-        padding: 36px 0;
+        padding: 36px 0 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -51,6 +59,12 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
             top: 100%;
         }
     }
+    &__logo {
+        margin-bottom: 35px;
+    }
+    &__img {
+        pointer-events: none;
+    }
     &__list {
         display: flex;
         list-style-type: none;
@@ -59,6 +73,12 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
         min-width: 134px;
         width: 100%;
         text-align: center;
+        &:hover {
+            border-bottom: 2px solid $colorLine;
+        }
+        &:active {
+            border-bottom: 2px solid $colorLineActive;
+        }
     }
     &__link {
         font-weight: 700;
@@ -67,11 +87,16 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
         text-transform: uppercase;
         color: $colorLinkHeader;
         text-decoration: none;
+        display: block;
+        padding: 0 0 36px;
+        &:active {
+            color: $colorLinkActive;
+        }
     }
-
 }
+
 .banner {
-    padding: 0 0 120px;
+    padding: 230px 0 120px;
     margin-bottom: 116px;
     background-image: url(../media/banner.jpg);
     background-repeat: no-repeat;
@@ -121,6 +146,15 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
         max-width: 370px;
         width: 100%;
         color: $colorButtonText;
+        &:hover {
+            cursor: pointer;
+            background-color: $colorButtonHover;
+        }
+        &:active {
+            cursor: pointer;
+            background-color: $colorButtonActive;
+            box-shadow: 4px 4px 30px $colorButtonShadow;
+        }
     }
 }
 .features {
@@ -156,6 +190,9 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
         max-width: 1510px;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+    }
+    &__link {
+
     }
 }
 .team {
