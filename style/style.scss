@@ -12,12 +12,14 @@ $colorButtonActive: rgba(255, 67, 67, 1);
 $colorButtonShadow: rgb(255, 67, 67);
 $colorButtonText: rgba(255, 255, 255, 1);
 $colorBorderIcon: rgba(198, 203, 205, 1);
+$colorBorderIconHover: rgba(231, 20, 20, 1); 
 $colorLine: rgba(186, 187, 197, 1);
 $colorLineActive: rgba(231, 20, 20, 1);
 $colorBanner: rgba(37, 43, 73, 1);
 $colorLinkHeader: rgba(255, 255, 255, 1);
 $colorLinkActive: rgba(231, 20, 20, 1);
-$colorFooter: rgba(53, 60, 101, 1);
+$colorProjectsHover: rgba(255, 67, 67, 0.8);
+$colorFooterLight: rgba(53, 60, 101, 1);
 $colorFooterDark: rgba(44, 49, 84, 1);
 $colorFooterText: rgba(255, 255, 255, 1);
 $colorFooterTextGrey: rgba(128, 128, 128, 1);
@@ -28,14 +30,13 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
     box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
 }
-
 .container {
     max-width: 1170px;
     width: 100%;
     margin: 0 auto;
     padding: 0 15px;
+    font-family: 'Raleway', sans-serif;
 }
-
 .header {
     position: fixed;
     left: 0;
@@ -44,7 +45,6 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
     z-index: 2;
 
     &__container {
-        padding: 36px 0 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -60,7 +60,7 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
         }
     }
     &__logo {
-        margin-bottom: 35px;
+        display: inline-block;
     }
     &__img {
         pointer-events: none;
@@ -73,12 +73,6 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
         min-width: 134px;
         width: 100%;
         text-align: center;
-        &:hover {
-            border-bottom: 2px solid $colorLine;
-        }
-        &:active {
-            border-bottom: 2px solid $colorLineActive;
-        }
     }
     &__link {
         font-weight: 700;
@@ -88,13 +82,16 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
         color: $colorLinkHeader;
         text-decoration: none;
         display: block;
-        padding: 0 0 36px;
+        padding: 36px 0 36px;
+        &:hover {
+            border-bottom: 2px solid $colorLine;
+        }
         &:active {
             color: $colorLinkActive;
+            border-bottom: 2px solid $colorLineActive;
         }
     }
 }
-
 .banner {
     padding: 230px 0 120px;
     margin-bottom: 116px;
@@ -186,13 +183,11 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
 }
 .projects {
     margin-bottom: 114px;
-    &__container{
+    &__block{
         max-width: 1510px;
+        margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-    }
-    &__link {
-
     }
 }
 .team {
@@ -205,7 +200,6 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
     }
     &__img {
         margin-bottom: 30px;
-
     }
     &__name {
         margin-bottom: 5px;
@@ -242,33 +236,33 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
         display: flex;
         justify-content: center;
         align-items: center;
+        &:hover {
+            transform: scale(1.1);
+        }
     }
     &__icon {
         pointer-events: none;
     }
-
 }
 .testimonials {
     margin-bottom: 114px;
-    position: relative;
-    &::after {
-        content: "";
-        display: block;
+    
+    &__block {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    &__info {
         background-color: rgba(92, 50, 73, 1);
-        opacity: 0.8;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
+        padding: 116px 170px 144px 129px;
     }
-
-    &__container {
-        position: relative;
-        z-index: 1;
-        text-align: center;
+    &__title {
+        font-family: 'Cardo';
+        font-style: italic;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 49px;
+        text-transform: capitalize;
     }
-
 }
 .download {
     margin-bottom: 114px;
@@ -300,17 +294,32 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
         text-transform: uppercase;
         border: none;
         padding: 26px 0;
+        &:hover {
+            cursor: pointer;
+            background-color: $colorButtonHover;
+        }
+        &:active {
+            cursor: pointer;
+            background-color: $colorButtonActive;
+            box-shadow: 4px 4px 30px $colorButtonShadow;
+        }
     }
 }
 .footer {
     padding-top: 71px;
-    background-color: $colorFooter;
-
-    &__container {
+    &__light {
+        background-color: $colorFooterLight;
+        padding: 71px 0;
+    }
+    &__dark{
+        background-color: $colorFooterDark;
+        padding: 24px 0;
+        margin: 0 auto;
+    }
+    &__container-light {
         display: flex;
         flex-wrap: wrap;
         column-gap: 30px;
-        row-gap: 67px;
     }
     &__block {
         width: calc((100% - 60px) / 3);
@@ -330,9 +339,27 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
         line-height: 21px;
         text-transform: capitalize;
         color: $colorFooterText;
-    }
-    &__block-dark {
         text-align: center;
+    }
+    &__social-block {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 27px;
+    }
+    &__link {
+        border: 1px solid $colorBorderIcon;
+        width: 39px;
+        height: 39px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+    &__icon {
+        pointer-events: none;
     }
     &__txt {
         color: $colorFooterTextGrey;
