@@ -1,28 +1,20 @@
-$colorTitleWhite: rgba(255, 255, 255, 1);
-$colorTitleDark: rgba(45, 48, 51, 1);
-$colorTitleBlack: rgba(0, 0, 0, 1);
-$colorTextWhite: rgba(255, 255, 255, 1);
-$colorTextGrey: rgba(108, 114, 121, 1);
-$colorTextBlack: rgba(45, 48, 51, 1);
-$colorTextDark: rgba(0, 0, 0, 1);
-$colorTextRed: rgba(255, 67, 67, 1);
-$colorButton: rgba(255, 67, 67, 1);
+$colorPrimary: rgba(255, 255, 255, 1);
+$colorSecondary: rgba(255, 67, 67, 1);
+$colorTertiary: rgba(108, 114, 121, 1);
+$colorFeaturesTitle: rgba(45, 48, 51, 1);
+$colorDownload: rgba(0, 0, 0, 1);
+$colorTeamText: rgba(45, 48, 51, 1);
 $colorButtonHover: rgba(231, 20, 20, 1);
 $colorButtonActive: rgba(255, 67, 67, 1);
 $colorButtonShadow: rgb(255, 67, 67);
-$colorButtonText: rgba(255, 255, 255, 1);
 $colorBorderIcon: rgba(198, 203, 205, 1);
-$colorBorderIconHover: rgba(231, 20, 20, 1); 
 $colorLine: rgba(186, 187, 197, 1);
-$colorLineActive: rgba(231, 20, 20, 1);
+$colorHeaderActive: rgba(231, 20, 20, 1);
 $colorBanner: rgba(37, 43, 73, 1);
-$colorLinkHeader: rgba(255, 255, 255, 1);
-$colorLinkActive: rgba(231, 20, 20, 1);
 $colorProjectsHover: rgba(255, 67, 67, 0.8);
 $colorFooterLight: rgba(53, 60, 101, 1);
 $colorFooterDark: rgba(44, 49, 84, 1);
-$colorFooterText: rgba(255, 255, 255, 1);
-$colorFooterTextGrey: rgba(128, 128, 128, 1);
+$colorFooterText: rgba(128, 128, 128, 1);
 
 * {
     margin: 0;
@@ -79,16 +71,17 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
         font-size: 13px;
         line-height: 15px;
         text-transform: uppercase;
-        color: $colorLinkHeader;
+        color: $colorPrimary;
         text-decoration: none;
         display: block;
         padding: 36px 0 36px;
+        border-bottom: 3px solid transparent;
         &:hover {
-            border-bottom: 2px solid $colorLine;
+            border-bottom: 3px solid $colorLine;
         }
         &:active {
-            color: $colorLinkActive;
-            border-bottom: 2px solid $colorLineActive;
+            color: $colorHeaderActive;
+            border-bottom: 3px solid $colorHeaderActive;
         }
     }
 }
@@ -122,11 +115,11 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
         font-size: 64px;
         line-height: 75px;
         text-transform: uppercase;
-        color: $colorTitleWhite;
+        color: $colorPrimary;
         margin-bottom: 31px;
     }
     &__text{
-        color: $colorTextWhite;
+        color: $colorPrimary;
         margin-bottom: 80px;
         font-weight: 400;
         font-size: 24px;
@@ -142,7 +135,7 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
         padding: 26px 0;
         max-width: 370px;
         width: 100%;
-        color: $colorButtonText;
+        color: $colorPrimary;
         &:hover {
             cursor: pointer;
             background-color: $colorButtonHover;
@@ -171,14 +164,14 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
         font-size: 24px;
         line-height: 28px;
         text-transform: uppercase;
-        color: $colorTitleDark;
+        color: $colorFeaturesTitle;
         margin-bottom: 20px;
     }
     &__text {
         font-weight: 400;
         font-size: 18px;
         line-height: 21px;
-        color: $colorTextGrey;
+        color: $colorTertiary;
     }
 }
 .projects {
@@ -189,6 +182,13 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
         display: grid;
         grid-template-columns: repeat(4, 1fr);
     }
+    &__wrap {
+        &:hover{
+        background-color: rgba(255, 67, 67, 0.8);
+        position: relative;
+        z-index: 2;
+    }
+}
 }
 .team {
     margin-bottom: 114px;
@@ -207,7 +207,7 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
         font-size: 24px;
         line-height: 28px;
         text-transform: capitalize;
-        color: $colorTextBlack;
+        color: $colorTeamText;
     }
     &__profession {
         font-weight: 400;
@@ -215,13 +215,13 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
         line-height: 21px;
         text-transform: uppercase;
         margin-bottom: 18px;
-        color: $colorTextRed;
+        color: $colorSecondary;
     }
     &__text {
         font-weight: 400;
         font-size: 18px;
         line-height: 21px;
-        color: $colorTextGrey;
+        color: $colorTertiary;
         margin-bottom: 38px;
     }
     &__social {
@@ -246,13 +246,23 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
 }
 .testimonials {
     margin-bottom: 114px;
-    
+    background-color: rgba(92, 50, 73, 1);
     &__block {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        max-width: 1511px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+    }
+    &__wrap {
+        width: 45%;
+    }
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
     &__info {
-        background-color: rgba(92, 50, 73, 1);
+        width: 55%;
         padding: 116px 170px 144px 129px;
     }
     &__title {
@@ -262,6 +272,13 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
         font-size: 36px;
         line-height: 49px;
         text-transform: capitalize;
+        padding: 17px 0;
+    }
+    &__text {
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 15px;
+        text-transform: uppercase;
     }
 }
 .download {
@@ -271,7 +288,7 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
         font-weight: 500;
         font-size: 30px;
         line-height: 35px;
-        color: $colorTitleBlack;
+        color: $colorDownload;
         margin-bottom: 5px;
         padding: 17px 0;
     }
@@ -281,12 +298,12 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
         line-height: 21px;
         text-transform: uppercase;
         margin-bottom: 48px;
-        color: $colorTextDark;
+        color: $colorDownload;
     }
     &__btn {
         max-width: 370px;
         width: 100%;
-        color: $colorButtonText;
+        color: $colorPrimary;
         background-color: $colorButton;
         font-weight: 900;
         font-size: 24px;
@@ -330,7 +347,7 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
         font-size: 18px;
         line-height: 21px;
         text-transform: uppercase;
-        color: $colorFooterText;
+        color: $colorPrimary;
         margin-bottom: 29px;
     }
     &__text {
@@ -338,7 +355,7 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
         font-size: 18px;
         line-height: 21px;
         text-transform: capitalize;
-        color: $colorFooterText;
+        color: $colorPrimary;
         text-align: center;
     }
     &__social-block {
@@ -362,6 +379,6 @@ $colorFooterTextGrey: rgba(128, 128, 128, 1);
         pointer-events: none;
     }
     &__txt {
-        color: $colorFooterTextGrey;
+        color: $colorFooterText;
     }
 }
