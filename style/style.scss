@@ -35,8 +35,10 @@ $colorFooterText: rgba(128, 128, 128, 1);
     top: 0;
     width: 100%;
     z-index: 2;
+    padding: 0 15px;
 
     &__container {
+        padding: 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -91,6 +93,7 @@ $colorFooterText: rgba(128, 128, 128, 1);
     background-image: url(../media/banner.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     position: relative;
     &::after {
         content: "";
@@ -103,13 +106,11 @@ $colorFooterText: rgba(128, 128, 128, 1);
         left: 0;
         top: 0;
     }
-
     &__container {
         position: relative;
         z-index: 1;
         text-align: center;
     }
-
     &__title {
         font-weight: 900;
         font-size: 64px;
@@ -126,7 +127,7 @@ $colorFooterText: rgba(128, 128, 128, 1);
         line-height: 28px;
     }
     &__btn {
-        background-color: $colorButton;
+        background-color: $colorSecondary;
         font-weight: 900;
         font-size: 24px;
         line-height: 28px;
@@ -177,18 +178,30 @@ $colorFooterText: rgba(128, 128, 128, 1);
 .projects {
     margin-bottom: 114px;
     &__block{
-        max-width: 1510px;
         margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
     }
     &__wrap {
+        position: relative;
+        border: 1px solid $colorPrimary;
+        &::before {
+            content: "";
+            display: block;
+            padding-top: 100%;
+        }
         &:hover{
         background-color: rgba(255, 67, 67, 0.8);
-        position: relative;
-        z-index: 2;
     }
-}
+    }
+    &__img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 .team {
     margin-bottom: 114px;
@@ -198,8 +211,27 @@ $colorFooterText: rgba(128, 128, 128, 1);
         justify-content: space-between;
         column-gap: 20px;
     }
-    &__img {
+    &__info {
+        width: calc((100% - 60px) / 4);
+        display: flex;
+        flex-direction: column;
+    }
+    &__wrap {
         margin-bottom: 30px;
+        position: relative;
+        &::before {
+            content: "";
+            display: block;
+            padding-top: 100%;
+        }
+    }
+    &__img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
     &__name {
         margin-bottom: 5px;
@@ -222,14 +254,15 @@ $colorFooterText: rgba(128, 128, 128, 1);
         font-size: 18px;
         line-height: 21px;
         color: $colorTertiary;
-        margin-bottom: 38px;
+        margin: auto 0 38px;
     }
     &__social {
         display: flex;
-        justify-content: flex-start;
         gap: 5px;
+        margin: auto 0 0;
     }
     &__link {
+        cursor: pointer;
         border: 1px solid $colorBorderIcon;
         width: 39px;
         height: 39px;
@@ -248,31 +281,33 @@ $colorFooterText: rgba(128, 128, 128, 1);
     margin-bottom: 114px;
     background-color: rgba(92, 50, 73, 1);
     &__block {
-        max-width: 1511px;
         width: 100%;
         margin: 0 auto;
         display: flex;
     }
     &__wrap {
-        width: 45%;
+        max-width: 741px;
+        width: 100%;
     }
     &__img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: right;
     }
     &__info {
-        width: 55%;
-        padding: 116px 170px 144px 129px;
+        padding: 133px 30px 125px 127px;
     }
     &__title {
+        max-width: 471px;
+        width: 100%;
         font-family: 'Cardo';
         font-style: italic;
         font-weight: 400;
-        font-size: 36px;
+        font-size: 33px;
         line-height: 49px;
         text-transform: capitalize;
-        padding: 17px 0;
+        margin-bottom: 25px;
     }
     &__text {
         font-weight: 700;
@@ -289,8 +324,7 @@ $colorFooterText: rgba(128, 128, 128, 1);
         font-size: 30px;
         line-height: 35px;
         color: $colorDownload;
-        margin-bottom: 5px;
-        padding: 17px 0;
+        margin-bottom: 22px;
     }
     &__text {
         font-weight: 700;
@@ -304,7 +338,7 @@ $colorFooterText: rgba(128, 128, 128, 1);
         max-width: 370px;
         width: 100%;
         color: $colorPrimary;
-        background-color: $colorButton;
+        background-color: $colorSecondary;
         font-weight: 900;
         font-size: 24px;
         line-height: 28px;
@@ -323,7 +357,6 @@ $colorFooterText: rgba(128, 128, 128, 1);
     }
 }
 .footer {
-    padding-top: 71px;
     &__light {
         background-color: $colorFooterLight;
         padding: 71px 0;
