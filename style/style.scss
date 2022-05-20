@@ -52,6 +52,10 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
             position: absolute;
             left: 0;
             top: 100%;
+
+            @media (max-width: 1024px) {
+                width: 984px;
+            }
         }
     }
     &__logo {
@@ -68,6 +72,9 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
         min-width: 134px;
         width: 100%;
         text-align: center;
+        @media (max-width: 1024px) {
+            min-width: 112px;
+        }
     }
     &__link {
         font-weight: 700;
@@ -79,6 +86,10 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
         display: block;
         padding: 36px 0 36px;
         border-bottom: 3px solid transparent;
+        @media (max-width: 1024px) {
+            font-size: 12px;
+            line-height: 14px;
+        }
         &:hover {
             border-bottom: 3px solid $colorLine;
         }
@@ -96,6 +107,10 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
     background-size: cover;
     background-position: center;
     position: relative;
+    @media (max-width: 1024px) {
+        padding: 257px 0 126px;
+        margin-bottom: 78px;
+    }
     &::after {
         content: "";
         display: block;
@@ -119,6 +134,11 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
         text-transform: uppercase;
         color: $colorPrimary;
         margin-bottom: 31px;
+        @media (max-width: 1024px) {
+            font-size: 48px;
+            line-height: 56px;
+            margin-bottom: 62px;
+        }
     }
     &__text{
         color: $colorPrimary;
@@ -126,6 +146,11 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
         font-weight: 400;
         font-size: 24px;
         line-height: 28px;
+        @media (max-width: 1024px) {
+            font-size: 18px;
+            line-height: 21px;
+            margin-bottom: 89px;
+        }
     }
     &__btn {
         background-color: $colorSecondary;
@@ -139,6 +164,9 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
         width: 100%;
         color: $colorPrimary;
         transition: all 0.3s linear;
+        @media (max-width: 1024px) {
+            max-width: 314px;
+        }
         &:hover {
             cursor: pointer;
             background-color: $colorButtonHover;
@@ -152,15 +180,25 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
 }
 .features {
     margin-bottom: 116px;
+    @media (max-width: 1024px) {
+        margin-bottom: 80px;
+    }
     &__container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         column-gap: 30px;
         row-gap: 88px;
         text-align: center;
+        @media (max-width: 1024px) {
+            column-gap: 20px;
+            row-gap: 50px;
+        }
     }
     &__img {
-        margin-bottom: 29px;
+        margin-bottom: 51px;
+        @media (max-width: 1024px) {
+            margin-bottom: 44px;
+        }
     }
     &__title {
         font-weight: 900;
@@ -168,17 +206,29 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
         line-height: 28px;
         text-transform: uppercase;
         color: $colorFeaturesTitle;
-        margin-bottom: 20px;
+        margin-bottom: 42px;
+        @media (max-width: 1024px) {
+            font-size: 18px;
+            line-height: 21px;
+            margin-bottom: 24px;
+        }
     }
     &__text {
         font-weight: 400;
         font-size: 18px;
         line-height: 21px;
         color: $colorTertiary;
+        @media (max-width: 1024px) {
+            font-size: 14px;
+            line-height: 16px;
+        }
     }
 }
 .projects {
     margin-bottom: 114px;
+    @media (max-width: 1024px) {
+        margin-bottom: 78px;
+    }
     &__block{
         margin: 0 auto;
         display: grid;
@@ -248,7 +298,9 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
 }
 .team {
     margin-bottom: 114px;
-
+    @media (max-width: 1024px) {
+        margin-bottom: 78px;
+    }
     &__container {
         display: flex;
         justify-content: space-between;
@@ -262,6 +314,9 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
     &__wrap {
         margin-bottom: 30px;
         position: relative;
+        @media (max-width: 1024px) {
+            margin-bottom: 25px;
+        }
         &::before {
             content: "";
             display: block;
@@ -283,6 +338,10 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
         line-height: 28px;
         text-transform: capitalize;
         color: $colorTeamText;
+        @media (max-width: 1024px) {
+            font-size: 18px;
+            line-height: 21px;
+        }
     }
     &__profession {
         font-weight: 400;
@@ -291,6 +350,11 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
         text-transform: uppercase;
         margin-bottom: 18px;
         color: $colorSecondary;
+        @media (max-width: 1024px) {
+            font-size: 14px;
+            line-height: 16px;
+            margin-bottom: 22px;
+        }
     }
     &__text {
         font-weight: 400;
@@ -298,6 +362,11 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
         line-height: 21px;
         color: $colorTertiary;
         margin: auto 0 38px;
+        @media (max-width: 1024px) {
+            font-size: 14px;
+            line-height: 16px;
+            margin: auto 0 39px;
+        }
     }
     &__social {
         display: flex;
@@ -312,6 +381,10 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
         display: flex;
         justify-content: center;
         align-items: center;
+        @media (max-width: 1024px) {
+            width: 33px;
+            height: 33px;
+        }
         &:hover{
             border: 1px solid $colorButtonHover;
         }
@@ -326,6 +399,9 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
 .testimonials {
     margin-bottom: 114px;
     background-color: $backgroundcolorTestimonials;
+    @media (max-width: 1024px) {
+        margin-bottom: 78px;
+    }
     &__block {
         width: 100%;
         margin: 0 auto;
