@@ -145,6 +145,8 @@
   max-width: 370px;
   width: 100%;
   color: white;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .banner__btn:hover {
@@ -207,6 +209,8 @@
 }
 
 .projects__wrap {
+  cursor: pointer;
+  text-align: center;
   position: relative;
   border: 1px solid white;
 }
@@ -217,7 +221,18 @@
   padding-top: 100%;
 }
 
-.projects__wrap:hover {
+.projects__wrap::after {
+  content: "";
+  display: block;
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.projects__wrap:hover::after {
   background-color: rgba(255, 67, 67, 0.8);
 }
 
@@ -229,6 +244,39 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  pointer-events: none;
+}
+
+.projects__title {
+  position: relative;
+  z-index: 3;
+  left: 0;
+  top: -170px;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: uppercase;
+  color: transparent;
+  margin-bottom: 21px;
+}
+
+.projects__title:hover {
+  color: white;
+}
+
+.projects__text {
+  position: relative;
+  z-index: 3;
+  left: 0;
+  top: -128px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: transparent;
+}
+
+.projects__text:hover {
+  color: white;
 }
 
 .team {
@@ -329,12 +377,15 @@
 }
 
 .team__link:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  border: 1px solid #e71414;
 }
 
 .team__icon {
   pointer-events: none;
+}
+
+.team__icon:hover path {
+  fill: #e71414;
 }
 
 .testimonials {
@@ -351,8 +402,7 @@
 }
 
 .testimonials__wrap {
-  max-width: 741px;
-  width: 100%;
+  width: 45%;
 }
 
 .testimonials__img {
@@ -365,6 +415,7 @@
 }
 
 .testimonials__info {
+  width: 55%;
   padding: 133px 30px 125px 127px;
 }
 
@@ -420,6 +471,8 @@
   text-transform: uppercase;
   border: none;
   padding: 26px 0;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .download__btn:hover {
@@ -507,12 +560,27 @@
 }
 
 .footer__link:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  border: 1px solid #e71414;
 }
 
 .footer__icon {
   pointer-events: none;
+}
+
+.footer__icon:hover path {
+  fill: #e71414;
+}
+
+.footer__text-dark {
+  max-width: 370px;
+  width: 100%;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  text-transform: capitalize;
+  color: white;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .footer__txt {
