@@ -505,7 +505,6 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
     &__block {
         background-color: $backgroundcolorTestimonials;
         width: 100%;
-        max-height: 490px;
         margin: 0 auto;
         display: flex;
         @media (max-width: 767px) {
@@ -518,6 +517,7 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
         &::before {
             content: "";
             display: block;
+            padding-top: 100%;
         }
         @media (max-width: 767px) {
             width: 100%;
@@ -532,6 +532,7 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
         object-fit: cover;
         object-position: right;
     }
+    
     &__info {
         width: 55%;
         padding: 133px 30px 125px 127px;

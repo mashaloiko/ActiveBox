@@ -319,7 +319,11 @@
                 <div class="swiper-slide">
                     <div class="testimonials__block">
                         <div class="testimonials__wrap">
-                            <img class="testimonials__img" src="media/testimonials.jpg" alt="testimonials">
+                            <picture class="testimonials__img">
+                                <source srcset="media/testimonials.jpg" media="(min-width: 1025px)"/>
+                                <source srcset="media/testimonials-tablet.jpg" media="(min-width: 768px)"/>
+                                <img src="./media/testimonials-mobile.jpg" alt="Start now" />
+                            </picture>
                         </div>
                         <div class="testimonials__info">
                             <h2 class="testimonials__title">“Integer posuere erat a ante venenatis dapibus posuere velit
