@@ -108,6 +108,12 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
             border-bottom: 3px solid $colorHeaderActive;
         }
     }
+    &__nav-mobile {
+        display: none;
+        @media (max-width: 767px) {
+            display: block;
+        }
+    }
 }
 .banner {
     padding: 230px 0 120px;
@@ -487,15 +493,19 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
 }
 .testimonials {
     margin-bottom: 114px;
-    background-color: $backgroundcolorTestimonials;
-    @media (max-width: 1024px) {
-        margin-bottom: 78px;
+        @media (max-width: 1024px) {
+            margin-bottom: 78px;
     }
-    @media (max-width: 767px) {
-        margin-bottom: 86px;
+        @media (max-width: 767px) {
+            margin-bottom: 86px;
+    }
+    &__swiper {
+        padding-bottom: 40px;
     }
     &__block {
+        background-color: $backgroundcolorTestimonials;
         width: 100%;
+        max-height: 490px;
         margin: 0 auto;
         display: flex;
         @media (max-width: 767px) {
@@ -504,11 +514,19 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
     }
     &__wrap {
         width: 45%;
+        position: relative;
+        &::before {
+            content: "";
+            display: block;
+        }
         @media (max-width: 767px) {
             width: 100%;
-        }
+        }   
     }
     &__img {
+        position: absolute;
+        left: 0;
+        top: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -544,7 +562,7 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
             margin-bottom: 16px;
         }
         @media (max-width: 767px) {
-            width: 100%;
+            max-width: 100%;
             margin-bottom: 23px;
         }
     }
@@ -559,6 +577,14 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
             line-height: 14px;
         }
     }
+}
+.swiper-pagination-bullet {
+    background-color: $colorPrimary;
+    border: 1px solid rgba(126, 93, 111, 1);
+    opacity: 1;
+}
+.swiper-pagination-bullet-active {
+    background-color: rgba(126, 93, 111, 1);
 }
 .download {
     margin-bottom: 114px;
