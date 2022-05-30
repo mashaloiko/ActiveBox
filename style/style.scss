@@ -12,6 +12,7 @@ $colorLine: rgba(186, 187, 197, 1);
 $colorHeaderActive: rgba(231, 20, 20, 1);
 $colorBanner: rgba(37, 43, 73, 1);
 $colorProjectsHover: rgba(255, 67, 67, 0.8);
+$colorProjectsActive: rgba(185, 12, 12, 0.8);
 $colorFooterLight: rgba(53, 60, 101, 1);
 $colorFooterDark: rgba(44, 49, 84, 1);
 $colorFooterText: rgba(128, 128, 128, 1);
@@ -50,14 +51,15 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
         &::after {
             content: "";
             display: block;
-            width: 1170px;
+            max-width: 1170px;
+            width: 100%;
             border-bottom: 1px solid $colorLine;
             position: absolute;
             left: 0;
             top: 100%;
 
             @media (max-width: 1024px) {
-                width: 984px;
+                max-width: 984px;
             }
             @media (max-width: 767px) {
                 display: none;
@@ -71,6 +73,9 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
         pointer-events: none;
     }
     &__nav {
+        @media (max-width: 1024px) {
+            display: block;
+        }
         @media (max-width: 767px) {
             display: none;
         }
@@ -83,6 +88,9 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
         min-width: 134px;
         width: 100%;
         text-align: center;
+        @media (max-width: 1024px) {
+            min-width: 110px;
+        }
     }
     &__link {
         cursor: pointer;
@@ -93,7 +101,7 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
         color: $colorPrimary;
         text-decoration: none;
         display: block;
-        padding: 36px 0 36px;
+        padding: 36px 0;
         border-bottom: 3px solid transparent;
         transition: all 0.3s linear;
         @media (max-width: 1024px) {
@@ -340,6 +348,9 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
             background-color: $colorProjectsHover;
             color: $colorPrimary;
         }
+        &:active {
+            background-color: $colorProjectsActive;
+        }
     }
     &__title {
         font-size: 24px;
@@ -481,14 +492,12 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
             border: 1px solid $colorButtonHover;
             path {
                 fill: $colorButtonHover;
+                transition: all 0.5s linear;
             }
         }
     }
     &__icon {
         pointer-events: none;
-        &:hover path{
-            fill: $colorButtonHover;
-        }
     }
 }
 .testimonials {
@@ -512,12 +521,13 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
         }
     }
     &__wrap {
+        cursor: pointer;
         width: 45%;
         position: relative;
         &::before {
             content: "";
             display: block;
-            padding-top: 100%;
+            padding-top: 66%;
         }
         @media (max-width: 767px) {
             width: 100%;
@@ -530,18 +540,18 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
         width: 100%;
         height: 100%;
         object-fit: cover;
+        overflow: hidden;
         object-position: right;
     }
-    
     &__info {
         width: 55%;
-        padding: 133px 30px 125px 127px;
+        padding: 133px 170px 123px 127px;
         @media (max-width: 1024px) {
-            padding: 61px 30px 112px 88px;
+            padding: 61px 104px 112px 88px;
         }
         @media (max-width: 767px) {
             width: 100%;
-            padding: 23px 25px 95px 20px;
+            padding: 23px 25px 100px 20px;
             text-align: center;
         }
     }
@@ -583,6 +593,7 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
     background-color: $colorPrimary;
     border: 1px solid rgba(126, 93, 111, 1);
     opacity: 1;
+    margin: 0 13px;
 }
 .swiper-pagination-bullet-active {
     background-color: rgba(126, 93, 111, 1);

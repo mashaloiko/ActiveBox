@@ -46,7 +46,8 @@
 .header__container::after {
   content: "";
   display: block;
-  width: 1170px;
+  max-width: 1170px;
+  width: 100%;
   border-bottom: 1px solid #babbc5;
   position: absolute;
   left: 0;
@@ -55,7 +56,7 @@
 
 @media (max-width: 1024px) {
   .header__container::after {
-    width: 984px;
+    max-width: 984px;
   }
 }
 
@@ -71,6 +72,12 @@
 
 .header__img {
   pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+  .header__nav {
+    display: block;
+  }
 }
 
 @media (max-width: 767px) {
@@ -92,6 +99,12 @@
   text-align: center;
 }
 
+@media (max-width: 1024px) {
+  .header__item {
+    min-width: 110px;
+  }
+}
+
 .header__link {
   cursor: pointer;
   font-weight: 700;
@@ -101,7 +114,7 @@
   color: white;
   text-decoration: none;
   display: block;
-  padding: 36px 0 36px;
+  padding: 36px 0;
   border-bottom: 3px solid transparent;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
@@ -468,6 +481,10 @@
   color: white;
 }
 
+.projects__hover:active {
+  background-color: rgba(185, 12, 12, 0.8);
+}
+
 .projects__title {
   font-size: 24px;
   line-height: 28px;
@@ -695,14 +712,12 @@
 
 .team__link:hover path {
   fill: #e71414;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
 }
 
 .team__icon {
   pointer-events: none;
-}
-
-.team__icon:hover path {
-  fill: #e71414;
 }
 
 .testimonials {
@@ -744,6 +759,7 @@
 }
 
 .testimonials__wrap {
+  cursor: pointer;
   width: 45%;
   position: relative;
 }
@@ -751,7 +767,7 @@
 .testimonials__wrap::before {
   content: "";
   display: block;
-  padding-top: 100%;
+  padding-top: 66%;
 }
 
 @media (max-width: 767px) {
@@ -768,25 +784,26 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  overflow: hidden;
   -o-object-position: right;
      object-position: right;
 }
 
 .testimonials__info {
   width: 55%;
-  padding: 133px 30px 125px 127px;
+  padding: 133px 170px 123px 127px;
 }
 
 @media (max-width: 1024px) {
   .testimonials__info {
-    padding: 61px 30px 112px 88px;
+    padding: 61px 104px 112px 88px;
   }
 }
 
 @media (max-width: 767px) {
   .testimonials__info {
     width: 100%;
-    padding: 23px 25px 95px 20px;
+    padding: 23px 25px 100px 20px;
     text-align: center;
   }
 }
@@ -839,6 +856,7 @@
   background-color: white;
   border: 1px solid #7e5d6f;
   opacity: 1;
+  margin: 0 13px;
 }
 
 .swiper-pagination-bullet-active {
