@@ -289,7 +289,7 @@
 
 @media (max-width: 767px) {
   .features {
-    margin-bottom: 35px;
+    margin-bottom: 92px;
   }
 }
 
@@ -407,7 +407,7 @@
 
 @media (max-width: 767px) {
   .projects {
-    margin-bottom: 35px;
+    margin-bottom: 90px;
   }
 }
 
@@ -710,14 +710,25 @@
   border: 1px solid #e71414;
 }
 
-.team__link:hover path {
-  fill: #e71414;
-  -webkit-transition: all 0.5s linear;
-  transition: all 0.5s linear;
+.team__link:active {
+  border: 1px solid #ff4343;
 }
 
 .team__icon {
   pointer-events: none;
+}
+
+path {
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+path:hover {
+  fill: #e71414;
+}
+
+path:active {
+  fill: #ff4343;
 }
 
 .testimonials {
@@ -791,12 +802,12 @@
 
 .testimonials__info {
   width: 55%;
-  padding: 133px 170px 123px 127px;
+  padding: 115px 120px 123px 127px;
 }
 
 @media (max-width: 1024px) {
   .testimonials__info {
-    padding: 61px 104px 112px 88px;
+    padding: 61px 95px 71px 88px;
   }
 }
 
@@ -856,11 +867,14 @@
   background-color: white;
   border: 1px solid #7e5d6f;
   opacity: 1;
-  margin: 0 13px;
 }
 
 .swiper-pagination-bullet-active {
   background-color: #7e5d6f;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 13px;
 }
 
 .download {
@@ -1143,10 +1157,6 @@
 
 .footer__link:hover {
   border: 1px solid #e71414;
-}
-
-.footer__link:hover path {
-  fill: #e71414;
 }
 
 .footer__icon {

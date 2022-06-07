@@ -226,7 +226,7 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
         margin-bottom: 80px;
     }
     @media (max-width: 767px) {
-        margin-bottom: 35px;
+        margin-bottom: 92px;
     }
 
     &__container {
@@ -300,7 +300,7 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
         margin-bottom: 78px;
     }
     @media (max-width: 767px) {
-        margin-bottom: 35px;
+        margin-bottom: 90px;
     }
     &__block{
         margin: 0 auto;
@@ -490,14 +490,22 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
         }
         &:hover{
             border: 1px solid $colorButtonHover;
-            path {
-                fill: $colorButtonHover;
-                transition: all 0.5s linear;
-            }
+        }
+        &:active {
+            border: 1px solid $colorButtonActive;
         }
     }
     &__icon {
         pointer-events: none;
+    }
+}
+path {
+    transition: all 0.5s linear;
+    &:hover{
+        fill: $colorButtonHover;
+    }
+    &:active {
+        fill: $colorButtonActive;
     }
 }
 .testimonials {
@@ -545,9 +553,9 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
     }
     &__info {
         width: 55%;
-        padding: 133px 170px 123px 127px;
+        padding: 115px 120px 123px 127px;
         @media (max-width: 1024px) {
-            padding: 61px 104px 112px 88px;
+            padding: 61px 95px 71px 88px;
         }
         @media (max-width: 767px) {
             width: 100%;
@@ -593,10 +601,12 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
     background-color: $colorPrimary;
     border: 1px solid rgba(126, 93, 111, 1);
     opacity: 1;
-    margin: 0 13px;
 }
 .swiper-pagination-bullet-active {
     background-color: rgba(126, 93, 111, 1);
+}
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 13px;
 }
 .download {
     margin-bottom: 114px;
@@ -773,9 +783,6 @@ $backgroundcolorTestimonials: rgba(92, 50, 73, 1);
         }
         &:hover{
             border: 1px solid $colorButtonHover;
-            path {
-                fill: $colorButtonHover;
-            }
         }
     }
     &__icon {
